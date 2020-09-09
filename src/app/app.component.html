@@ -4,9 +4,14 @@
 <div class="task_3">
   <br>
   <h1>Задача_3</h1>
-  <div class="mat-checkbox">
+  <div class="atribute">
     <p appNgxHide>Test element (atribute directive)</p>
     <mat-checkbox [(ngModel)]="appNgxHide">Hide test element</mat-checkbox>
   </div>
+  <div class="struct">
+    <p *appStructuralNgxHide="appStructuralNgxHide"> Параграф структурной директивы</p>
+    <mat-checkbox [(ngModel)]="appStructuralNgxHide">Hide test text (struct directory)</mat-checkbox>
+  </div>
 </div>
+
 

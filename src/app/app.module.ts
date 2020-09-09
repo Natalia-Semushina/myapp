@@ -11,12 +11,14 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { PassComponent } from './pass/pass.component';
 import { NgxHideDirective } from './ngx-hide.directive';
+import { StructuralNgxHideDirective } from './structural-ngx-hide.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PassComponent,
-    NgxHideDirective
+    NgxHideDirective,
+    StructuralNgxHideDirective
   ],
   imports: [
     BrowserModule,
