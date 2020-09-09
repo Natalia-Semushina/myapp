@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pass',
-  template: `<h1> Задача_2</h1>
+  template: `
                 <div class="second_task">
+                  <h1> Задача_2</h1>
                     <mat-form-field>
                         <mat-label>\
                             Введите пароль:
