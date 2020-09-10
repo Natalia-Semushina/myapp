@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-pass',
   template: `
                 <div class="second_task">
-                  <h1> Задача_2</h1>
+                  <h1 fxLayoutAlign="center center"> Задача_2</h1>
                     <mat-form-field>
                         <mat-label>\
                             Введите пароль:

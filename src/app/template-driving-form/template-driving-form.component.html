@@ -1,0 +1,53 @@
+<p>template-driving-form works!</p>
+<mat-label><b>задача 4 пункт 5 </b></mat-label>
+<br>
+<mat-label><b>Template driving form </b></mat-label>
+<form (ngSubmit)="onSubmit()" #regForm="ngForm">
+  <div fxLayout="row" fxLayoutAlign="center center" class="field-row">
+    <mat-form-field appearance="fill" floatLabel="auto">
+      <mat-label>Введите логин:</mat-label>
+      <input matInput placeholder="e-mail" type="email" name="login" [(ngModel)]="loginForm.login" #login=ngModel
+             pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="login" required maxlength="50" >
+      <mat-error class="text-danger"
+                 *ngIf="(login.touched || loginForm.submitted) && login.errors?.required">
+        Email is required
+      </mat-error>
+      <mat-error class="text-danger" *ngIf="login.touched && login.errors?.pattern">
+        Enter a valid email address: abc@def.com
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="field-row">
+    <mat-form-field appearance="fill" floatLabel="auto">
+      <mat-label>Введите пароль:</mat-label>
+      <input matInput placeholder="password" [type]="Hide ? 'password' : 'text'"
+             pattern="[A-z1-9]{6,}" [(ngModel)]="loginForm.password"  #pass=ngModel id="pass" required name="pass">
+      <mat-error class="pass-danger"
+                 *ngIf="(pass.touched || loginForm.submitted) && pass.errors?.required">
+        Password is required
+      </mat-error>
+      <mat-error class="pass-danger" *ngIf="pass.touched && pass.errors?.pattern">
+        Enter a valid password
+      </mat-error>
+    </mat-form-field>
+
+
+    <br>
+    <!--   <span *ngIf="password">Пароль: {{ password }}</span>-->
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" class="field-row">
+    <mat-checkbox [(ngModel)]="Hide" id="Hide" required name="Hide" >
+      Скрыть пароль
+    </mat-checkbox>
+  </div>
+  <br>
+  <div fxLayout="row" fxLayoutAlign="center center" class="field-row">
+    <button mat-raised-button color="accent" type="submit" class="btn btn-success" [disabled]="!regForm.form.valid"
+            (click)="printForm()">Login</button>
+
+  </div>
+
+</form>

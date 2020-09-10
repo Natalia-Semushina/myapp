@@ -9,16 +9,26 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
-import { PassComponent } from './pass/pass.component';
 import { NgxHideDirective } from './ngx-hide.directive';
 import { StructuralNgxHideDirective } from './structural-ngx-hide.directive';
+import {CommonFormModule} from './common-form/common-form.module';
+import {MatButtonModule} from '@angular/material/button';
+import {TemplateDrivingFormComponent} from './template-driving-form/template-driving-form.component';
+import {TemplateDrivingFormModule} from './template-driving-form/templateDrivingForm.module';
+
+
+const modules = [
+  CommonFormModule,
+  TemplateDrivingFormModule
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PassComponent,
     NgxHideDirective,
-    StructuralNgxHideDirective
+    StructuralNgxHideDirective,
+
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,9 @@ import { StructuralNgxHideDirective } from './structural-ngx-hide.directive';
     MatFormFieldModule,
     MatCheckboxModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    modules,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
