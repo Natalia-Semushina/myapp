@@ -8,18 +8,22 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxHideDirective } from './ngx-hide.directive';
 import { StructuralNgxHideDirective } from './structural-ngx-hide.directive';
 import {CommonFormModule} from './common-form/common-form.module';
 import {MatButtonModule} from '@angular/material/button';
-import {TemplateDrivingFormComponent} from './template-driving-form/template-driving-form.component';
 import {TemplateDrivingFormModule} from './template-driving-form/templateDrivingForm.module';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PwdValidationDirective } from './reactive-form/pwd-validation.directive';
+import {ReactiveModule} from './reactive-form/reactive.module';
 
 
 const modules = [
   CommonFormModule,
-  TemplateDrivingFormModule
+  TemplateDrivingFormModule,
+  ReactiveModule
+
 ];
 
 @NgModule({
@@ -27,6 +31,8 @@ const modules = [
     AppComponent,
     NgxHideDirective,
     StructuralNgxHideDirective,
+
+
 
 
   ],
@@ -40,7 +46,8 @@ const modules = [
     MatInputModule,
     FormsModule,
     modules,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

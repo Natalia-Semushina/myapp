@@ -1,0 +1,37 @@
+
+<form [formGroup]="regForm"  (ngSubmit)="onSubmit()">
+  <div fxLayout="column" fxLayoutAlign="center center" class="field-row" >
+
+    <br>
+    <mat-label><b>создание реактивной формы</b></mat-label>
+    <br>
+    <mat-form-field appearance="fill" floatLabel="always">
+      <label>E-mail:
+        <input matInput placeholder="abcd@hgj.com" type="email" formControlName="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+      </label>
+    </mat-form-field>
+    <mat-form-field  appearance="fill" floatLabel="always">
+      <label> Username:
+        <input matInput placeholder="Name" type="text" formControlName="username" >
+      </label>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" floatLabel="always">
+       <label> Password:
+          <input matInput placeholder="jdK7hkli" type="password" formControlName="password" pattern="[A-z1-9]{6,}">
+<!--                 *ngIf="regForm.hasError('notSame', 'passwords')">-->
+       </label>
+    </mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always">
+        <label> Retype password:
+          <input matInput placeholder="jdK7hkli" type="password" formControlName="retypePassword">
+<!--                 *ngIf="regForm.hasError('notSame', 'passwords')">-->
+        </label>
+<!--      <mat-error *ngIf="regForm.hasError('notSame', 'password')"></mat-error>-->
+    </mat-form-field>
+
+
+
+    <button mat-raised-button color="accent" type="submit" [disabled]="!regForm.valid">Register </button>
+  </div>
+</form>
